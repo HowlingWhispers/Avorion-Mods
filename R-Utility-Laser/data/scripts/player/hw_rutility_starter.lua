@@ -1,7 +1,7 @@
 -- namespace HWRUtilityStarter
 HWRUtilityStarter = {}
 
-local RUtilityGenerator = include("hw/rutilitygenerator")
+local RUtilityGenerator = include("rutilitygenerator")
 local grantMarker = "howlingwhispers.rutilitylaser.starter.v1"
 local starterCount = 4
 
