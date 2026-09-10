@@ -13,15 +13,31 @@ Create one utility turret that can:
 
 ## Current phase
 
-Research and API verification.
+First playable prototype.
 
-The old implementation proved that dual resource conversion could work manually. The unresolved problem was autonomous target classification: automatic turret logic expected a single weapon role and became unreliable when one turret tried to represent both mining and salvaging.
+The prototype is deliberately based on a vanilla Raw Mining Laser and then adds raw-metal efficiency plus hull-focused damage. This gives us a conservative starting point for validating the old behavior without immediately patching Avorion's automatic-targeting internals.
 
-The rebuild will therefore treat automatic targeting as a first-class subsystem rather than simply assigning two behaviors to one vanilla weapon type.
+Automatic dual-role targeting is **not considered solved yet**. That remains the main R-Utility v2 engineering task.
+
+## Starter equipment
+
+For development/testing, each player receives **4 Common Iron R-Utility Turrets** the first time the mod initializes for that player.
+
+The grant is protected by a persistent player value so reconnecting/reloading does not keep handing out more turrets. During development, enabling the mod in an existing save will also trigger the one-time grant for that player; a later pass can restrict this strictly to newly-created players once current callback behavior is verified against the installed game scripts.
+
+Current starter prototype values intentionally prioritize testability over final balance:
+
+- Iron material
+- Tech 1
+- Common rarity
+- minimum 55% raw stone efficiency
+- minimum 45% raw metal efficiency
+- 7.5x minimum hull damage multiplier
+- no shield damage
 
 ## Compatibility target
 
-Current Avorion 2.x. Exact minimum version will be set after validating against current vanilla scripts.
+Avorion 2.x. Exact minimum version will be tightened after validation against the user's current vanilla installation/API documentation.
 
 ## Development rule
 
